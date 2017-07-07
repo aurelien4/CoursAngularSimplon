@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<p>{{ data.title }}</p>
+<p>{{ data.content }}</p>
+<p>{{ data.createdAt |date('d-m-Y') }}</p>
+<p>{{ data.isEnabled }}</p>
+
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+
+{% endblock body %}

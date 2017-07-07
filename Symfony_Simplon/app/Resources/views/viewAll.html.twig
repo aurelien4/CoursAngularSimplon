@@ -1,0 +1,19 @@
+{% extends 'base.html.twig'%}
+
+{% block body %}
+<a href="{{ path('orderDate') }}">Ordonner</a>
+    <a href="{{ path('firstForm') }}">Formulaire</a>
+    {% for data in database %}
+        {% if data.id%2 != 1 %}
+            <p>odd</p>
+        {% endif%}
+    <p>{{ data.id }}</p>
+    <a href="{{ path("viewOne",{"id": data.id}) }}">{{ data.title }}</a>
+    <p>{{ data.content }}</p>
+    <p>{{ data.createdAt |date('d-m-Y') }}</p>
+    <p>{{ data.isEnabled }}</p>
+    <p>{{ data.vote }}</p>
+    <hr />
+{% endfor %}
+
+{% endblock body %}

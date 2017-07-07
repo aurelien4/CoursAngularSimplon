@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/sass/style.sass') }}">
+    </head>
+    <body>
+        {% block body %}
+            {% include 'header.html.twig' %}
+
+            {% include 'menu.html.twig' %}
+
+        {% endblock %}
+        {% block javascripts %}
+            <script src="{{ asset('assets/js/script.js') }}"></script>
+        {% endblock %}
+
+        {% include'footer.html.twig' %}
+
+    </body>
+</html>
